@@ -1,0 +1,83 @@
+{
+    "aulas": [
+      {
+        "_id": "aula1",
+        "professor": {
+          "_id": "prof1",
+          "nome": "João Silva"
+        },
+        "assunto": "Matemática",
+        "alunos": [
+          {
+            "_id": "aluno1",
+            "nome": "Ana Santos"
+          },
+          {
+            "_id": "aluno2",
+            "nome": "Pedro Lima"
+          },
+          {
+            "_id": "aluno3",
+            "nome": "Mariana Costa"
+          },
+          {
+            "_id": "aluno4",
+            "nome": "Lucas Oliveira"
+          }
+        ]
+      },
+      {
+        "_id": "aula2",
+        "professor": {
+          "_id": "prof2",
+          "nome": "Maria Oliveira"
+        },
+        "assunto": "História",
+        "alunos": [
+          {
+            "_id": "aluno2",
+            "nome": "Pedro Lima"
+          },
+          {
+            "_id": "aluno3",
+            "nome": "Mariana Costa"
+          },
+          {
+            "_id": "aluno4",
+            "nome": "Lucas Oliveira"
+          },
+          {
+            "_id": "aluno5",
+            "nome": "Ricardo Silva"
+          }
+        ]
+      },
+      {
+        "_id": "aula3",
+        "professor": {
+          "_id": "prof3",
+          "nome": "Carlos Souza"
+        },
+        "assunto": "Ciências",
+        "alunos": [
+          {
+            "_id": "aluno1",
+            "nome": "Ana Santos"
+          },
+          {
+            "_id": "aluno3",
+            "nome": "Mariana Costa"
+          },
+          {
+            "_id": "aluno4",
+            "nome": "Lucas Oliveira"
+          },
+          {
+            "_id": "aluno6",
+            "nome": "Gabriela Mendes"
+          }
+        ]
+      }
+    ]
+  }
+  
