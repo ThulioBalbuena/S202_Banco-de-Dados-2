@@ -10,16 +10,26 @@ def getPokemonByName(name: str):
 pikachu = getPokemonByName("Pikachu")
 writeAJson(pikachu, "pikachu")
 
-pokemonsBL = db.collection.find({"next_evolution.1.num": {"$lte": "020"}})
-writeAJson(pokemonsBL, "pokemonsbelow020")
+def getPokemonByType(type: str):
+    return db.collection.find({"type": type})
 
-pokemonsBT = db.collection.find({"spawn_chance": {"$gt": 0.3, "$lt": 0.6}})
-writeAJson(pokemonsBT, "pokemonsbetween03and06")
+pokemonsFire = getPokemonByType("Fire")
+writeAJson(pokemonsFire, "pokemonsfire")
 
-fraquezas = ["Psychic", "Ice"]
-pokemonsF = db.collection.find({"weaknesses": {"$all": fraquezas}})
-writeAJson(pokemonsF, "pokemonsweaknesses")
+def getPokemonByNextEvolution(next_evolution: list):
+    return db.collection.find({"next_evolution": next_evolution})
 
-pokemonsG = db.collection.find({"type": "Grass"})
-writeAJson(pokemonsG, "pokemonsgrass")
+pokemonsNextEvolution = db.collection.find({"next_evolution": {"$exists": True}})
+writeAJson(pokemonsNextEvolution, "pokemonsnextevolution")
 
+def getPokemonBySpawnChance(spawn_chance: float):
+    return db.collection.find({"spawn_chance": spawn_chance})
+
+pokemonsSpawnChance = db.collection.find({"spawn_chance": {"$gt": 0.3, "$lt": 0.6}})
+writeAJson(pokemonsSpawnChance, "pokemonsSpawnChance")
+
+def getPokemonByWeaknesses(weaknesses: list):
+    return db.collection.find({"weaknesses": weaknesses})
+
+pokemonsWeaknesses = db.collection.find({"weaknesses": {"$in": ["Ground"]}})
+writeAJson(pokemonsWeaknesses, "pokemonsWeaknesses")
