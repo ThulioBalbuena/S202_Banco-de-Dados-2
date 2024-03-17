@@ -5,16 +5,13 @@ db = Database(database="mercado", collection="produtos")
 
 class ProductAnalyzer:
     result = db.collection.aggregate([
-        {
-        "$unwind": "$produtos"
-    },
-    {
+         {
         "$group": {
             "_id": "$data_compra",
-            "total_products_sold": {"$sum": "$produtos.quantidade"}
+            "total_sales": {"$sum": 1}
         }
     }
-])
+    ])
     writeAJson(result, "Total de vendas por dia")
 
 
