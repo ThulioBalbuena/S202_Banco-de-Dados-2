@@ -33,7 +33,8 @@ livros_schema = {
     }
 }
 
-livros_collection = db.get_collection('Livros')
+#livros_collection = db.get_create_collection('Livros', validator=livros_schema) usado para criar o schema
+livros_collection = db.get_collection('Livros') #usado para pegar a collection já existente
 
 def menu():
     print("\nMenu:")
